@@ -15,7 +15,7 @@ local KeyTextbox = KeyTab:AddTextbox({
 local VerifyButton = KeyTab:AddButton({
     Name = "Verify Key",
     Callback = function()
-        if enteredKey == "12345667" then
+        if enteredKey == loadstring(game:HttpGet(('https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/it_not_skeleton_hub/Data/Key.txt')))() then
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Key is valid!", Time = 3})
         else
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Invalid key!", Time = 3})
@@ -30,3 +30,4 @@ CreditsTab:AddParagraph("Developed by:", "ItsNotSkeleton and CocaCola9999GG")
 CreditsTab:AddParagraph("Version:", "1.0")
 
 OrionLib:Init()
+
