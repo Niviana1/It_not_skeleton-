@@ -20,6 +20,10 @@ local VerifyButton = KeyTab:AddButton({
     Callback = function()
         if enteredKey == key then
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Key is valid!", Time = 3})
+            -- Load the desired script here
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/it_not_skeleton_hub/scr/Gui.lua'))()
+            -- Destroy the GUI
+            OrionLib:Destroy()
         else
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Invalid key!", Time = 3})
         end
