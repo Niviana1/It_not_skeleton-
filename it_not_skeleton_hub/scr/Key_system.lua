@@ -18,6 +18,9 @@ local VerifyButton = KeyTab:AddButton({
     Name = "Verify Key",
     Callback = function()
         local externalKey = game:HttpGet('https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/it_not_skeleton_hub/Data/Key.txt')
+        -- Trim whitespace and newline characters from both keys before comparison
+        enteredKey = enteredKey:trim()
+        externalKey = externalKey:trim()
         if enteredKey == externalKey then
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Key is valid!", Time = 3})
         else
