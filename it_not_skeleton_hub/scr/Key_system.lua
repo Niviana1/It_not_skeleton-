@@ -1,10 +1,11 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local KeyWindow = OrionLib:MakeWindow({Name = "ItsNotSkeleton Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionKeySystem"})
 
--- Key Verification Tab
+local key = "HuB_KeY_573I85FO84"
+
 local KeyTab = KeyWindow:MakeTab({Name = "Key Verification"})
 
-local enteredKey = "" -- Define enteredKey variable outside of the Callback function
+local enteredKey = ""
 
 local KeyTextbox = KeyTab:AddTextbox({
     Name = "Enter Key:",
@@ -17,11 +18,7 @@ local KeyTextbox = KeyTab:AddTextbox({
 local VerifyButton = KeyTab:AddButton({
     Name = "Verify Key",
     Callback = function()
-        local externalKey = game:HttpGet('https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/it_not_skeleton_hub/Data/Key.txt')
-        -- Trim whitespace and newline characters from both keys before comparison
-        enteredKey = enteredKey:trim()
-        externalKey = externalKey:trim()
-        if enteredKey == externalKey then
+        if enteredKey == key then
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Key is valid!", Time = 3})
         else
             OrionLib:MakeNotification({Name = "Key Verification", Content = "Invalid key!", Time = 3})
@@ -29,7 +26,6 @@ local VerifyButton = KeyTab:AddButton({
     end
 })
 
--- Credits Tab
 local CreditsTab = KeyWindow:MakeTab({Name = "Credits"})
 
 CreditsTab:AddParagraph("Developed by:", "ItsNotSkeleton and CocaCola9999GG")
