@@ -5,7 +5,7 @@ local function addButton(tab, text, url)
     tab:AddButton({
         Name = text,
         Callback = function()
-            loadstring(game:HttpGet(url, true))()
+            loadstring(game:HttpGet(url))()
         end
     })
 end
@@ -16,6 +16,5 @@ addButton(PrisonLifeTab, "Tiger Admin", "https://raw.githubusercontent.com/H17S3
 addButton(PrisonLifeTab, "Prison Life Admin", "https://pastebin.com/raw/1RvgFtcx")
 addButton(PrisonLifeTab, "Super Punch", "https://pastebin.com/raw/KeCtc8B5")
 addButton(PrisonLifeTab, "Prison Life Tool Giver", "https://pastebin.com/raw/A7timJWF")
-addButton(PrisonLifeTab, "Empty", "")
 
 OrionLib:Init()
