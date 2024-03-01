@@ -23,7 +23,7 @@ end
 -- Prison Life Tab
 local prisonLifeTab = Window:MakeTab({Name = "Prison Life", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
-local prisonLifeButtons = {"Admin 1", "Admin 2", "Admin 3", "Admin 4"}
+local prisonLifeButtons = {"Tiger admin", "unknown admin?", "super punch", "tool giver"}
 local prisonLifeScriptUrls = {
     'https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/TigeradminREVAMP.txt',
     'https://pastebin.com/raw/1RvgFtcx',
