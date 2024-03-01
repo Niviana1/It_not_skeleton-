@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 local Window = OrionLib:MakeWindow({Name = "It not skeletons gui V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local function addButton(tab, text, url)
