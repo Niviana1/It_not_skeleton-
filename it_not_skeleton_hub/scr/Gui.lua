@@ -46,7 +46,7 @@ end
 
 -- Prison Life Tab
 local prisonLifeTab = Window:MakeTab({Name = "Prison Life", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-prisonLifeTab:AddLabel("Disclaimer: I don't know what these scripts do. The names of the buttons are placeholders. Thank you to the script providers.")
+prisonLifeTab:AddLabel("Disclaimer: I don't know what these scripts do i pull the button name out of nowhere. Thank you its not skeleton for providing me with the script, but not the name.")
 local prisonLifeButtons = {"Tiger Admin 2", "Prison Life Admin 3", "Super Punch 4", "Tool Giver"}
 local prisonLifeScriptUrls = {
     'https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/TigeradminREVAMP.txt',
