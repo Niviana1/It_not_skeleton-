@@ -1,21 +1,30 @@
+-- Get necessary services
 local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 local RunService = game:GetService("RunService")
 
+-- Initialize variables
 local ESPEnabled = false
 local ESPTransparency = 0.5
-local ESPUpdateDelay = 0.05
+local ESPUpdateDelay = 0.09
 
+-- Function to get the root part of a character
 local function getRoot(part)
     return part:IsA("Model") and part.PrimaryPart or part:FindFirstChildWhichIsA("BasePart") or part
 end
 
+-- Function to round a number to a specified number of decimal places
 local function round(num, numDecimalPlaces)
     local mult = 10^(numDecimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
 end
 
+-- Declare variable for holding the RenderStepped connection
+local espLoopFunc
+
+-- Function to create ESP for a player
 local function createESP(plr)
+    -- Find or create a folder in CoreGui to hold ESP elements for the player
     local CoreGuiFolder = CoreGui:FindFirstChild(plr.Name .. "_ESP")
 
     if CoreGuiFolder then
@@ -26,6 +35,7 @@ local function createESP(plr)
     ESPholder.Name = plr.Name .. "_ESP"
     ESPholder.Parent = CoreGui
 
+    -- Function to create an ESP adornment for a part
     local function createAdornment(part)
         local a = Instance.new("BoxHandleAdornment")
         a.Name = plr.Name
@@ -39,14 +49,17 @@ local function createESP(plr)
         return a
     end
 
+    -- Wait for the player's character to load
     repeat wait(ESPUpdateDelay) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
 
+    -- Create adornments for each part of the player's character
     for _, part in pairs(plr.Character:GetChildren()) do
         if part:IsA("BasePart") then
             createAdornment(part)
         end
     end
 
+    -- If the player's character has a head, create a billboard GUI for displaying name
     if plr.Character and plr.Character:FindFirstChild("Head") then
         local BillboardGui = Instance.new("BillboardGui")
         local TextLabel = Instance.new("TextLabel")
@@ -67,10 +80,9 @@ local function createESP(plr)
         TextLabel.TextColor3 = Color3.new(1, 1, 1)
         TextLabel.TextStrokeTransparency = 0
         TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
-        TextLabel.Text = 'Name: ' .. plr.Name
         TextLabel.ZIndex = 10
 
-        local espLoopFunc
+        -- Event connections for updating ESP when player's character changes or team color changes
         local teamChange
         local addedFunc
 
@@ -101,8 +113,10 @@ local function createESP(plr)
             end
         end)
 
+        -- Function to update ESP elements continuously
         local function espLoop()
-            if CoreGui:FindFirstChild(plr.Name .. "_ESP") then
+            local espFolder = CoreGui:FindFirstChild(plr.Name .. "_ESP")
+            if espFolder then
                 local localCharRoot = getRoot(Players.LocalPlayer.Character)
                 if localCharRoot then
                     for _, plr in pairs(Players:GetPlayers()) do
@@ -117,16 +131,16 @@ local function createESP(plr)
                     end
                 end
             else
-                teamChange:Disconnect()
-                addedFunc:Disconnect()
                 espLoopFunc:Disconnect()
             end
         end
 
+        -- Connect espLoop function to RenderStepped for continuous updates
         espLoopFunc = RunService.RenderStepped:Connect(espLoop)
     end
 end
 
+-- Function to toggle ESP on/off
 local function toggleESP()
     ESPEnabled = not ESPEnabled
     for _, plr in pairs(Players:GetPlayers()) do
@@ -134,4 +148,5 @@ local function toggleESP()
     end
 end
 
+-- Initialize ESP
 toggleESP()
