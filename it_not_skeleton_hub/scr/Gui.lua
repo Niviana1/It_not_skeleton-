@@ -4,11 +4,14 @@ local Window = OrionLib:MakeWindow({Name = "Main", HidePremium = false, SaveConf
 -- Main Tab
 local mainTab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
-local mainButtons = {"Expander", "Aimbot", "Mobile Fly"}
+local mainButtons = {"Expander", "Aimbot", "Mobile Fly", "ESP", "MobKeyboard", "Teleport Tool"}
 local mainScriptUrls = {
     'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua',
     'https://raw.githubusercontent.com/PABLOSleuth2/Scripts1/main/RobloxScripts/TEST/aimbot_v2.lua',
-    'https://raw.githubusercontent.com/Niviana1/Personal-exploit-/main/Mobilefly.lua'
+    'https://raw.githubusercontent.com/Niviana1/Personal-exploit-/main/Mobilefly.lua',
+    'https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/Scripts/Esp.lua',
+    'https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt',
+    'https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Teleport%20Tool/Source.lua'
 }
 
 for i, buttonName in ipairs(mainButtons) do
@@ -46,8 +49,10 @@ end
 
 -- Prison Life Tab
 local prisonLifeTab = Window:MakeTab({Name = "Prison Life", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-prisonLifeTab:AddLabel("Disclaimer: I don't know what these scripts do.I pull the button name out\n of nowhere. \nThank you to its not skeleton for providing me with the script,but not the name.")
-local prisonLifeButtons = {"Tiger Admin", "Prison Life Admin", "Super Punch", "Tool Giver"}
+local disclaimerSection = prisonLifeTab:AddSection({Name = "Disclaimer"})
+disclaimerSection:AddLabel("I don't know what these scripts do. The names of the buttons are placeholders. Thank you to the script providers.")
+
+local prisonLifeButtons = {"Tiger Admin 2", "Prison Life Admin 3", "Super Punch 4", "Tool Giver"}
 local prisonLifeScriptUrls = {
     'https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/TigeradminREVAMP.txt',
     'https://pastebin.com/raw/1RvgFtcx',
