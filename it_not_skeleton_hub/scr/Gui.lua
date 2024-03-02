@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
-local Window = OrionLib:MakeWindow({Name = "Main", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = " it's not skeleton hub v0.6 w.i.p ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 -- Main Tab
 local mainTab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
@@ -52,7 +52,7 @@ local prisonLifeTab = Window:MakeTab({Name = "Prison Life", Icon = "rbxassetid:/
 local disclaimerSection = prisonLifeTab:AddSection({Name = "Disclaimer"})
 disclaimerSection:AddLabel("I don't know what these scripts do. The names of the buttons are placeholders. Thank you to the script providers.")
 
-local prisonLifeButtons = {"Tiger Admin 2", "Prison Life Admin 3", "Super Punch 4", "Tool Giver"}
+local prisonLifeButtons = {"Tiger Admin", "Prison Life Admin", "Super Punch", "Tool Giver"}
 local prisonLifeScriptUrls = {
     'https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/TigeradminREVAMP.txt',
     'https://pastebin.com/raw/1RvgFtcx',
