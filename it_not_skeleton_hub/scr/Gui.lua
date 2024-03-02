@@ -4,7 +4,7 @@ local Window = OrionLib:MakeWindow({Name = " it's not skeleton hub v0.6 w.i.p ",
 -- Main Tab
 local mainTab = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
-local mainButtons = {"Expander", "Aimbot", "Mobile Fly", "ESP", "MobKeyboard", "Teleport Tool"}
+local mainButtons = {"Expander", "Aimbot", "Mobile Fly", "ESP", "Mobile Keyboard", "Teleport Tool"}
 local mainScriptUrls = {
     'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua',
     'https://raw.githubusercontent.com/PABLOSleuth2/Scripts1/main/RobloxScripts/TEST/aimbot_v2.lua',
