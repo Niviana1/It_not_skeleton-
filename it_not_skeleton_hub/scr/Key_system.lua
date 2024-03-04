@@ -1,9 +1,9 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local KeyWindow = OrionLib:MakeWindow({Name = "ItsNotSkeleton Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionKeySystem"})
+local KeyWindow = OrionLib:MakeWindow({Name = "ItsNotSkeleton Hub key system", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionKeySystem"})
 
-local key = "HuB_KeY_573I85FO84"
+local key = "HuB_KeY_Ayumi-Hoshikawa"
 
-local KeyTab = KeyWindow:MakeTab({Name = "Key Verification"})
+local KeyTab = KeyWindow:MakeTab({Name = "verifie key"})
 
 local enteredKey = ""
 
@@ -35,6 +35,6 @@ local VerifyButton = KeyTab:AddButton({
 local CreditsTab = KeyWindow:MakeTab({Name = "Credits"})
 
 CreditsTab:AddParagraph("Developed by:", "ItsNotSkeleton and CocaCola9999GG")
-CreditsTab:AddParagraph("Version:", "1.0")
+CreditsTab:AddParagraph("Version:", "1.1")
 
 OrionLib:Init()
