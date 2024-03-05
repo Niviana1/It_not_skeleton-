@@ -15,8 +15,13 @@ local function createButtons(tab, buttons)
     end
 end
 
--- Main Tab
-local mainTab = Window:MakeTab({Name = "🔧|Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+-- Function to create tabs
+local function createTab(tabName, iconId, buttons)
+    local tab = Window:MakeTab({Name = tabName, Icon = iconId, PremiumOnly = false})
+    createButtons(tab, buttons)
+end
+
+-- Define button data for each tab
 local mainButtons = {
     {"Expander 🔨", 'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua'},
     {"Aimbot 🎯", 'https://raw.githubusercontent.com/PABLOSleuth2/Scripts1/main/RobloxScripts/TEST/aimbot_v2.lua'},
@@ -25,10 +30,7 @@ local mainButtons = {
     {"Mobile Keyboard 📱", 'https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt'},
     {"Teleport Tool 🌐", 'https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Teleport%20Tool/Source.lua'}
 }
-createButtons(mainTab, mainButtons)
 
--- Admin Tab
-local adminTab = Window:MakeTab({Name = "🛠️|Admin", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 local adminButtons = {
     {"Infinite Yield 🔄", 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'},
     {"CMD-X 💻", 'https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source'},
@@ -38,24 +40,29 @@ local adminButtons = {
     {"Legs Admin 🦵", 'https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'},
     {"Homebrew 🍺", 'https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main'}
 }
-createButtons(adminTab, adminButtons)
 
--- Prison Life Tab
-local prisonLifeTab = Window:MakeTab({Name = "🔒|Prison Life", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 local prisonLifeButtons = {
     {"Tiger Admin 🐅", 'https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/TigeradminREVAMP.txt'},
     {"Prison Life Admin 🚓", 'https://pastebin.com/raw/1RvgFtcx'},
     {"Super Punch 💥", 'https://pastebin.com/raw/KeCtc8B5'},
     {"Tool Giver 🛠️", 'https://pastebin.com/raw/A7timJWF'}
 }
-createButtons(prisonLifeTab, prisonLifeButtons)
 
--- Thy Hood Tab
-local thyHoodTab = Window:MakeTab({Name = "🇬🇧|Thy Hood", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 local thyHoodButtons = {
     {"Print People's Money 💰", 'https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/Scripts/Print_people_money_to_console.lua'},
     {"Get Fake Holy Sword ⚔️", 'https://raw.githubusercontent.com/Niviana1/It_not_skeleton-/main/Scripts/Get_thefakeholyswordthingy.lua'}
 }
-createButtons(thyHoodTab, thyHoodButtons)
 
+local miscButtons = {
+    {"Anticheat Bypass 🛡️", 'https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua'}
+}
+
+-- Create tabs with corresponding buttons
+createTab("🔧|Main", "rbxassetid://4483345998", mainButtons)
+createTab("🛠️|Admin", "rbxassetid://4483345998", adminButtons)
+createTab("🔒|Prison Life", "rbxassetid://4483345998", prisonLifeButtons)
+createTab("🇬🇧|Thy Hood", "rbxassetid://4483345998", thyHoodButtons)
+createTab("🔧|Misc", "rbxassetid://4483345998", miscButtons)
+
+-- Finish script initialization
 OrionLib:Init()
