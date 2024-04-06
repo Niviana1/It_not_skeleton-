@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/NathTheDev/AlysseAndroid/main/ModifiedOrionLibrary.lua')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "I.N.S", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 -- Function to create buttons for a tab
